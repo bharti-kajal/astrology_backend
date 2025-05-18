@@ -15,6 +15,7 @@ const Auth = (req, res, next) => {
         }
 
         req.userId = payload.userId;
+        req.role = payload.role;
         next();
     } catch (error) {
         return res.status(401).json({ success: false, message: 'Unauthorized: Invalid or expired token' });

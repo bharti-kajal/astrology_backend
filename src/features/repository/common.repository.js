@@ -10,14 +10,22 @@ class CommonRepository {
   }
 
   // 2. Get All Lists
-  async get(model, condition) {
+  async get(model, condition, projection) {
     try {
-      const result = await model.find(condition);
+      const result = await model.find(condition).select(projection);
       return result;
     } catch (err) {
       console.log("Error in fetching lists", err);
     }
   }
+
+  async findbyEmail(email, model) {
+      try {
+        return await model.findOne({ email: email });
+      } catch (err) {
+        console.log("Error ", err);
+      }
+    }
 
   // 4. Get By Id Details 
   async getById(id, model) {

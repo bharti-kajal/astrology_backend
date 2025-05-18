@@ -51,22 +51,6 @@ class UserRepository {
     }
   }
 
-  // async findById(userId) {
-  //   try {
-  //     return await UserModel.findById(userId).select("name email createdAt");
-  //   } catch (err) {
-  //     console.log("Error ", err);
-  //   }
-  // }
-
-  // async update(userId, updateData) {
-  //   console.log("updateData", updateData);
-  //   try {
-  //     return await UserModel.findByIdAndUpdate(userId, updateData);
-  //   } catch (err) {
-  //     console.log("Error ", err);
-  //   }
-  // }
 }
 
 export default UserRepository;
