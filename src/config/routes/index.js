@@ -8,7 +8,7 @@ import blogRouter from './blog.routes.js';
 import serviceRouter from "./service.routes.js";
 import testinomailRouter from "./testinomial.routes.js";
 import userRouter from "./user.routes.js";
-import planRouter from './plan.routes.js';
+import pricingRoutes from "./pricing.routes.js";
 
 
 const userController = new UserController();
@@ -16,8 +16,7 @@ router.use("/blogs", blogRouter);
 router.use("/services", serviceRouter);
 router.use("/testimonials", testinomailRouter);
 router.use("/user", userRouter);
-router.use("/plan", planRouter);
-// router.use("/products", productRouter);
+router.use("/plan", pricingRoutes);
 router.post("/sign-up", (req, res) => {
   userController.signUp(req, res);
 });
@@ -25,6 +24,7 @@ router.post("/sign-up", (req, res) => {
 router.post("/sign-in", (req, res) => {
   userController.signIn(req, res);
 });
+
 
 router.get("/logout", (req, res) => {
   userController.logout(req, res);

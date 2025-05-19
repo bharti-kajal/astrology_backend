@@ -1,20 +1,23 @@
 import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const planSchema = new mongoose.Schema({
-    price:{
-        type:Number,
+    planName:{
+        type:String,
         required: true
     },
-    extra: {
+    extra:{
         type: String
+    },
+    price:{
+        type:Number,
+        default:0
     },
     status: {
         type: Boolean,
-        default: 0
+        default: true
     }
-
 }, {timestamps: true});
 
-const planModel = mongoose.model('price_plan', planSchema);
-
-export default planModel;
+const PlanModel = mongoose.model('pricing', planSchema);
+export default PlanModel;

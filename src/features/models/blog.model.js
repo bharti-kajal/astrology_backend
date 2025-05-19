@@ -14,9 +14,11 @@ const blogSchema = new mongoose.Schema({
         type:Boolean,
         default:1
     },
-    categoryId:{
-        type: Schema.Types.ObjectId, ref: 'BlogCategory'
-    },
+   categories: [
+    {
+      type: String
+    }
+  ],
     description:{
         type:String,
         required:true

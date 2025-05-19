@@ -19,7 +19,7 @@ class BlogController {
       const data = {
         title: title,
         description: description,
-        categoryId: category,
+        categories: category,
         status: status,
         image: fileName,
       };
